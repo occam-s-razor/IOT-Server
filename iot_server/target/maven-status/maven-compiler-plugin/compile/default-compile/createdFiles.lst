@@ -1,0 +1,5 @@
+occamsrazor\iot_server\MainServer$1.class
+occamsrazor\iot_server\dao\UserDao.class
+occamsrazor\iot_server\MainServer.class
+occamsrazor\iot_server\domain\User.class
+occamsrazor\iot_server\dao\Impl\UserDaoImpl.class
