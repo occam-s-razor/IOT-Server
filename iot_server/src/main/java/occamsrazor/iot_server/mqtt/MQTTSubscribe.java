@@ -51,14 +51,18 @@ public class MQTTSubscribe implements MqttCallback {
 
     @Override
     public void connectionLost(Throwable throwable) {
-        System.out.println("Connect lost,do some thing to solve it");
+        try {
+            client.reconnect();
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void messageArrived(String s, MqttMessage mqttMessage) throws Exception {
         message = mqttMessage;
         System.out.println("From topic: " + s);
-        System.out.println(new String(mqttMessage.getPayload()));
+        // System.out.println(new String(mqttMessage.getPayload()));
         switch (s) {
             case "gateway_conversation":
                 gatewayMessageService.messageHandle(mqttMessage);
@@ -74,16 +78,6 @@ public class MQTTSubscribe implements MqttCallback {
     @Override
     public void deliveryComplete(IMqttDeliveryToken iMqttDeliveryToken) {
         //System.out.println("message send success");
-        MqttConnectOptions connectOptions = new MqttConnectOptions();
-        connectOptions.setUserName(USERNAME);
-        connectOptions.setPassword(PASSWORD.toCharArray());
-        connectOptions.setCleanSession(true);
-        System.out.println("Connecting to broker: " + BROKER);
-        try {
-            client.connect(connectOptions);
-        } catch (MqttException e) {
-            e.printStackTrace();
-        }
     }
 
     private MqttClient getMqttClient() {

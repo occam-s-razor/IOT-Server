@@ -11,5 +11,13 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 public interface ClientMessageService {
     public void messageHandle(MqttMessage mqttMessage);
 
-    public void loginHandle(JSONObject json);
+    public void loginHandle(JSONObject jsonObject);
+
+    public void modifyHandle(JSONObject jsonObject);
+
+    public void registerHandle(JSONObject jsonObject);
+
+    public void gatewayControlHandle(JSONObject jsonObject);
+
+    public void errorHandle();
 }

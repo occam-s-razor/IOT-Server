@@ -1,7 +1,13 @@
 package occamsrazor.iot_server.test;
 
+import occamsrazor.iot_server.dao.ClientUserDao;
+import occamsrazor.iot_server.dao.GatewayUserDao;
+import occamsrazor.iot_server.dao.impl.ClientUserDaoImpl;
+import occamsrazor.iot_server.dao.impl.GatewayUserDaoImpl;
 import occamsrazor.iot_server.dao.impl.UserDaoImpl;
 import occamsrazor.iot_server.dao.UserDao;
+import occamsrazor.iot_server.domain.ClientUser;
+import occamsrazor.iot_server.domain.GatewayUser;
 import occamsrazor.iot_server.domain.User;
 import occamsrazor.iot_server.mqtt.MQTTSubscribe;
 import occamsrazor.iot_server.utils.EncryptionUtil;
@@ -17,14 +23,23 @@ public class MyTest {
     @Test
     public void Test1() {
         UserDao userDao = new UserDaoImpl();
+        GatewayUserDao gatewayUserDao = new GatewayUserDaoImpl();
+        ClientUserDao clientUserDao = new ClientUserDaoImpl();
 
-        boolean x = userDao.insertUser(new User("FisherCloud", EncryptionUtil.getInstance().MD5("woshiyuxin")));
+//        boolean x = userDao.insertUser(new User("FisherCloud", EncryptionUtil.getInstance().MD5("woshiyuxin")));
+//
+//        if (x) {
+//            System.out.println("success");
+//        } else {
+//            System.out.println("failed");
+//        }
 
-        if (x) {
-            System.out.println("success");
-        } else {
-            System.out.println("failed");
-        }
+        User user = userDao.findByUserName("FisherCloud");
+        System.out.println(user + "\t" + EncryptionUtil.getInstance().MD5("woshiyuxin").equals(user.getPassword()));
+        GatewayUser gatewayUser = gatewayUserDao.findByUsername("FisherCloud");
+        System.out.println(gatewayUser);
+        ClientUser clientUser = clientUserDao.findByUsername("FisherCloud");
+        System.out.println(clientUser);
     }
 
     @Test
@@ -36,6 +51,16 @@ public class MyTest {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    @Test
+    public void Test3() {
+        UserDao userDao = new UserDaoImpl();
+        if (userDao.updateUser("FisherCloud", EncryptionUtil.getInstance().MD5("123456"))) {
+            System.out.println("success");
+        } else {
+            System.out.println("failed");
         }
     }
 }

@@ -63,4 +63,64 @@ public class UserDaoImpl implements UserDao {
 
         return res > 0;
     }
+
+    @Override
+    public boolean insertUser(String username, String password) {
+        String sql = "insert into user (username, password) values (?, ?);";
+
+        int res = 0;
+
+        try {
+            res = runner.update(sql, username, password);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return res > 0;
+    }
+
+    @Override
+    public boolean isCrrect(String username, String password) {
+        String sql = "select * from user where username = ? and password = ?;";
+
+        User user = null;
+
+        try {
+            user = runner.query(sql, new BeanHandler<>(User.class), username, password);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null != user;
+    }
+
+    @Override
+    public boolean updateUser(User user) {
+        String sql = "update user set password = ? where username = ?;";
+
+        int res = 0;
+
+        try {
+            res = runner.update(sql, user.getPassword(), user.getUsername());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return res > 0;
+    }
+
+    @Override
+    public boolean updateUser(String username, String password) {
+        String sql = "update user set password = ? where username = ?;";
+
+        int res = 0;
+
+        try {
+            res = runner.update(sql, password, username);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return res > 0;
+    }
 }

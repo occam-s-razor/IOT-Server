@@ -15,4 +15,12 @@ public interface UserDao {
     public List<User> findAllUser();
 
     public boolean insertUser(User user);
+
+    public boolean insertUser(String username, String password);
+
+    public boolean isCrrect(String username, String password);
+
+    public boolean updateUser(User user);
+
+    public boolean updateUser(String username, String password);
 }
