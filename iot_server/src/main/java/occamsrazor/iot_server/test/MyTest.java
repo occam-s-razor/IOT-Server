@@ -1,8 +1,9 @@
 package occamsrazor.iot_server.test;
 
-import occamsrazor.iot_server.dao.Impl.UserDaoImpl;
+import occamsrazor.iot_server.dao.impl.UserDaoImpl;
 import occamsrazor.iot_server.dao.UserDao;
 import occamsrazor.iot_server.domain.User;
+import occamsrazor.iot_server.mqtt.MQTTSubscribe;
 import occamsrazor.iot_server.utils.EncryptionUtil;
 import org.junit.jupiter.api.Test;
 
@@ -23,6 +24,18 @@ public class MyTest {
             System.out.println("success");
         } else {
             System.out.println("failed");
+        }
+    }
+
+    @Test
+    public void Test2() {
+        MQTTSubscribe subscribe = new MQTTSubscribe("gateway_conversation");
+        while (true) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

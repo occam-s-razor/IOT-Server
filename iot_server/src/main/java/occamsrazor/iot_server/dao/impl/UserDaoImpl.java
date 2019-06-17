@@ -1,4 +1,4 @@
-package occamsrazor.iot_server.dao.Impl;
+package occamsrazor.iot_server.dao.impl;
 
 import occamsrazor.iot_server.dao.UserDao;
 import occamsrazor.iot_server.domain.User;

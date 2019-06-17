@@ -15,7 +15,7 @@ public interface GatewayUserDao {
 
     public GatewayUser findByUsername(String username);
 
-    public List<GatewayUser> findAllGateWayUser();
+    public List<GatewayUser> findAllGatewayUser();
 
     public boolean insertGatewayUser(GatewayUser gatewayUser);
 }

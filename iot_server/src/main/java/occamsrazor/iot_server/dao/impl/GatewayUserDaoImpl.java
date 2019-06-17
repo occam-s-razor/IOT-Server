@@ -1,4 +1,4 @@
-package occamsrazor.iot_server.dao.Impl;
+package occamsrazor.iot_server.dao.impl;
 
 import occamsrazor.iot_server.dao.GatewayUserDao;
 import occamsrazor.iot_server.domain.GatewayUser;
@@ -50,7 +50,7 @@ public class GatewayUserDaoImpl implements GatewayUserDao {
     }
 
     @Override
-    public List<GatewayUser> findAllGateWayUser() {
+    public List<GatewayUser> findAllGatewayUser() {
         String sql = "select * from gateway_user;";
 
         List<GatewayUser> users = null;
