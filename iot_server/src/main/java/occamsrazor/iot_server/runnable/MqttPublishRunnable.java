@@ -1,4 +1,4 @@
-package occamsrazor.iot_server;
+package occamsrazor.iot_server.runnable;
 
 import occamsrazor.iot_server.mqtt.MQTTPublish;
 import org.eclipse.paho.client.mqttv3.MqttException;

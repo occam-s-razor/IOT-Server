@@ -1,5 +1,9 @@
 package occamsrazor.iot_server.mqtt;
 
+import occamsrazor.iot_server.service.ClientMessageService;
+import occamsrazor.iot_server.service.GatewayMessageService;
+import occamsrazor.iot_server.service.impl.ClientMessageServiceImpl;
+import occamsrazor.iot_server.service.impl.GatewayMessageServiceImpl;
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
@@ -17,6 +21,9 @@ public class MQTTSubscribe implements MqttCallback {
 
     private MqttClient client = null;
     private MqttMessage message = null;
+
+    private ClientMessageService clientMessageService = new ClientMessageServiceImpl();
+    private GatewayMessageService gatewayMessageService = new GatewayMessageServiceImpl();
 
     public MQTTSubscribe() {
     }
@@ -51,12 +58,32 @@ public class MQTTSubscribe implements MqttCallback {
     public void messageArrived(String s, MqttMessage mqttMessage) throws Exception {
         message = mqttMessage;
         System.out.println("From topic: " + s);
-        System.out.println("Message content: " + new String(message.getPayload()));
+        System.out.println(new String(mqttMessage.getPayload()));
+        switch (s) {
+            case "gateway_conversation":
+                gatewayMessageService.messageHandle(mqttMessage);
+                break;
+            case "client_conversation":
+                clientMessageService.messageHandle(mqttMessage);
+                break;
+            default:
+                break;
+        }
     }
 
     @Override
     public void deliveryComplete(IMqttDeliveryToken iMqttDeliveryToken) {
         //System.out.println("message send success");
+        MqttConnectOptions connectOptions = new MqttConnectOptions();
+        connectOptions.setUserName(USERNAME);
+        connectOptions.setPassword(PASSWORD.toCharArray());
+        connectOptions.setCleanSession(true);
+        System.out.println("Connecting to broker: " + BROKER);
+        try {
+            client.connect(connectOptions);
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
     }
 
     private MqttClient getMqttClient() {
