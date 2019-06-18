@@ -10,6 +10,7 @@ import occamsrazor.iot_server.domain.ClientUser;
 import occamsrazor.iot_server.domain.GatewayUser;
 import occamsrazor.iot_server.domain.User;
 import occamsrazor.iot_server.mqtt.MQTTSubscribe;
+import occamsrazor.iot_server.utils.DateUtil;
 import occamsrazor.iot_server.utils.EncryptionUtil;
 import org.junit.jupiter.api.Test;
 
@@ -69,6 +70,6 @@ public class MyTest {
     @Test
     public void Test4() {
         Date date = new Date();
-        System.out.println(date.getTime());
+        System.out.println(DateUtil.DateToString(date, "yyyy-MM-dd HH:mm:ss"));
     }
 }

@@ -28,7 +28,7 @@ login success
 {
 	"type": "login_return",
 	"status": "ok",
-	"gateway_id": "123456"
+	"gateway_id": "2016110201"
 }
 ```
 
@@ -106,9 +106,9 @@ modify failed
 ```json
 {
 	"type": "dashboard",
-	"gateway_id": "123761354321",
+	"gateway_id": "2016110201",
 	"sensors_value": {
-		"time_stamp", "2019/06/15",
+		"time_stamp", "2019-06-18 10:00:49",
 		"temperature": "26.3",
 		"humidity": "60",
 		"fan": "69",
@@ -152,7 +152,7 @@ modify failed
 ```json
 {
 	"type": "dashboard",
-	"gateway_id": "123761354321",
+	"gateway_id": "2016110201",
 	"sensors_value": {
 		"temperature": "26.3",
 		"humidity": "60",
