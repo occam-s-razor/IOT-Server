@@ -1,9 +1,7 @@
 package occamsrazor.iot_server.mqtt;
 
-import occamsrazor.iot_server.service.ClientMessageService;
-import occamsrazor.iot_server.service.GatewayMessageService;
-import occamsrazor.iot_server.service.impl.ClientMessageServiceImpl;
-import occamsrazor.iot_server.service.impl.GatewayMessageServiceImpl;
+import occamsrazor.iot_server.service.MessageService;
+import occamsrazor.iot_server.service.impl.MessageServiceImpl;
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
@@ -22,8 +20,7 @@ public class MQTTSubscribe implements MqttCallback {
     private MqttClient client = null;
     private MqttMessage message = null;
 
-    private ClientMessageService clientMessageService = new ClientMessageServiceImpl();
-    private GatewayMessageService gatewayMessageService = new GatewayMessageServiceImpl();
+    private MessageService messageService = null;
 
     public MQTTSubscribe() {
     }
@@ -31,13 +28,19 @@ public class MQTTSubscribe implements MqttCallback {
     public MQTTSubscribe(String topic) {
         try {
             subscribe(topic);
-        } catch (MqttException e) {
+            Thread.sleep(10);
+            messageService = new MessageServiceImpl();
+            Thread.sleep(10);
+        } catch (MqttException | InterruptedException e) {
             e.printStackTrace();
         }
     }
 
-    public MQTTSubscribe(String[] topics) {
+    public MQTTSubscribe(String[] topics) throws InterruptedException {
         subscribe(topics);
+        Thread.sleep(10);
+        messageService = new MessageServiceImpl();
+        Thread.sleep(10);
     }
 
     public MqttMessage getMessage() {
@@ -52,7 +55,13 @@ public class MQTTSubscribe implements MqttCallback {
     @Override
     public void connectionLost(Throwable throwable) {
         try {
+            System.out.println("subscribe connect lost.reconnecting......");
             client.reconnect();
+            if (client.isConnected()) {
+                System.out.println("reconnected");
+            } else {
+                System.out.println("reconnect failed");
+            }
         } catch (MqttException e) {
             e.printStackTrace();
         }
@@ -65,10 +74,10 @@ public class MQTTSubscribe implements MqttCallback {
         // System.out.println(new String(mqttMessage.getPayload()));
         switch (s) {
             case "gateway_conversation":
-                gatewayMessageService.messageHandle(mqttMessage);
+                messageService.gatewayMessageHandle(mqttMessage);
                 break;
             case "client_conversation":
-                clientMessageService.messageHandle(mqttMessage);
+                messageService.clientMessageHandle(mqttMessage);
                 break;
             default:
                 break;
@@ -87,7 +96,7 @@ public class MQTTSubscribe implements MqttCallback {
             connectOptions.setUserName(USERNAME);
             connectOptions.setPassword(PASSWORD.toCharArray());
             connectOptions.setCleanSession(true);
-            System.out.println("Connecting to broker: " + BROKER);
+            System.out.println("subscribe connecting to broker: " + BROKER);
             subClient.connect(connectOptions);
             try {
                 Thread.sleep(100);

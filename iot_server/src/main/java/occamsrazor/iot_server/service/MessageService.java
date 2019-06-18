@@ -8,8 +8,8 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
  * @date : Create at 2019-06-16
  * @time : 15:24
  */
-public interface ClientMessageService {
-    public void messageHandle(MqttMessage mqttMessage);
+public interface MessageService {
+    public void clientMessageHandle(MqttMessage mqttMessage);
 
     public void loginHandle(JSONObject jsonObject);
 
@@ -20,4 +20,8 @@ public interface ClientMessageService {
     public void gatewayControlHandle(JSONObject jsonObject);
 
     public void errorHandle();
+
+    public void gatewayMessageHandle(MqttMessage mqttMessage);
+
+    public void dashboardHandle(JSONObject jsonObject);
 }

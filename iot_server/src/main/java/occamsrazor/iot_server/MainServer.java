@@ -18,7 +18,7 @@ public class MainServer {
 
         while (true) {
             Thread.sleep(5000);
-            System.out.println("Time:" + new Date());
+            // System.out.println("Time:" + new Date());
         }
     }
 }

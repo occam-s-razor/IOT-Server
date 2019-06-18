@@ -11,7 +11,7 @@ import occamsrazor.iot_server.dao.impl.UserDaoImpl;
 import occamsrazor.iot_server.domain.ClientUser;
 import occamsrazor.iot_server.domain.GatewayUser;
 import occamsrazor.iot_server.mqtt.MQTTPublish;
-import occamsrazor.iot_server.service.ClientMessageService;
+import occamsrazor.iot_server.service.MessageService;
 import occamsrazor.iot_server.utils.EncryptionUtil;
 import occamsrazor.iot_server.utils.ReadWriteLock;
 import org.eclipse.paho.client.mqttv3.MqttException;
@@ -20,14 +20,13 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.*;
-import java.util.concurrent.locks.Lock;
 
 /**
  * @author : 鱼摆摆
  * @date : Create at 2019-06-16
  * @time : 15:24
  */
-public class ClientMessageServiceImpl implements ClientMessageService {
+public class MessageServiceImpl implements MessageService {
 
     // 创建线程池
     ExecutorService service = new ThreadPoolExecutor(10, Integer.MAX_VALUE, 60L, TimeUnit.SECONDS, new SynchronousQueue<Runnable>(), Executors.defaultThreadFactory(), new ThreadPoolExecutor.AbortPolicy());
@@ -39,7 +38,7 @@ public class ClientMessageServiceImpl implements ClientMessageService {
     ReadWriteLock lock = new ReadWriteLock();
 
     @Override
-    public void messageHandle(MqttMessage mqttMessage) {
+    public void clientMessageHandle(MqttMessage mqttMessage) {
         String msg = new String(mqttMessage.getPayload());
         final JSONObject jsonObject = JSON.parseObject(msg);
         String type = jsonObject.getString("type");
@@ -125,8 +124,7 @@ public class ClientMessageServiceImpl implements ClientMessageService {
                 });
                 break;
             default:
-                System.out.println("error");
-                // errorHandle(jsonObject);
+                errorHandle();
                 break;
         }
     }
@@ -246,5 +244,37 @@ public class ClientMessageServiceImpl implements ClientMessageService {
 //        resMsg.put("type", "error");
 //        resMsg.put("status", "error");
 //        publish.publish(clientId + "_conversation", JSON.toJSONString(resMsg));
+    }
+
+    @Override
+    public void gatewayMessageHandle(MqttMessage mqttMessage) {
+        String msg = new String(mqttMessage.getPayload());
+        final JSONObject jsonObject = JSON.parseObject(msg);
+        String type = jsonObject.getString("type");
+        System.out.println("type:" + type);
+        if ("dashboard".equals(type)) {
+            service.execute(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        lock.lockRead();
+                        dashboardHandle(jsonObject);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    } finally {
+                        lock.unlockRead();
+                    }
+                }
+            });
+        } else {
+            System.out.println("error");
+        }
+    }
+
+    @Override
+    public void dashboardHandle(JSONObject jsonObject) {
+        String gatewayId = jsonObject.getString("gateway_id");
+        JSONObject object = jsonObject.getJSONObject("values");
+
     }
 }
