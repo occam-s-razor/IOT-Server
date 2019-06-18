@@ -1,7 +1,6 @@
 package occamsrazor.iot_server.test;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import occamsrazor.iot_server.dao.ClientUserDao;
 import occamsrazor.iot_server.dao.GatewayUserDao;
 import occamsrazor.iot_server.dao.SensorsValuesDao;
@@ -36,20 +35,13 @@ public class MyTest {
         GatewayUserDao gatewayUserDao = new GatewayUserDaoImpl();
         ClientUserDao clientUserDao = new ClientUserDaoImpl();
 
-//        boolean x = userDao.insertUser(new User("FisherCloud", EncryptionUtil.getInstance().MD5("woshiyuxin")));
-//
-//        if (x) {
-//            System.out.println("success");
-//        } else {
-//            System.out.println("failed");
-//        }
+        boolean x = userDao.insertUser(new User("ZZY", EncryptionUtil.getInstance().MD5("123456")));
 
-        User user = userDao.findByUserName("FisherCloud");
-        System.out.println(user + "\t" + EncryptionUtil.getInstance().MD5("woshiyuxin").equals(user.getPassword()));
-        GatewayUser gatewayUser = gatewayUserDao.findByUsername("FisherCloud");
-        System.out.println(gatewayUser);
-        ClientUser clientUser = clientUserDao.findByUsername("FisherCloud");
-        System.out.println(clientUser);
+        if (x) {
+            System.out.println("success");
+        } else {
+            System.out.println("failed");
+        }
     }
 
     @Test

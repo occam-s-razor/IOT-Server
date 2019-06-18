@@ -165,6 +165,7 @@ public class MessageServiceImpl implements MessageService {
             if (null != gatewayUser) {
                 resMsg.put("status", "ok");
                 resMsg.put("gateway_id", gatewayUser.getGateway_id());
+                System.out.println("login ok");
             } else {
                 resMsg.put("status", "error");
                 System.out.println("login error");
