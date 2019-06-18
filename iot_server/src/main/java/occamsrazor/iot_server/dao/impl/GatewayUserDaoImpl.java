@@ -50,6 +50,21 @@ public class GatewayUserDaoImpl implements GatewayUserDao {
     }
 
     @Override
+    public String findGatewayIdByUsername(String username) {
+        String sql = "select gateway_id from gateway_user where username = ?;";
+
+        String gatewayId = null;
+
+        try {
+            gatewayId = runner.query(sql, new BeanHandler<>(String.class), username);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return gatewayId;
+    }
+
+    @Override
     public List<GatewayUser> findAllGatewayUser() {
         String sql = "select * from gateway_user;";
 

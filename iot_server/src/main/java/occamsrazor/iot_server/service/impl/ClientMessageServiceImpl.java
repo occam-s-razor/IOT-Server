@@ -1,9 +1,7 @@
 package occamsrazor.iot_server.service.impl;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.mysql.cj.xdevapi.JsonArray;
 import occamsrazor.iot_server.dao.ClientUserDao;
 import occamsrazor.iot_server.dao.GatewayUserDao;
 import occamsrazor.iot_server.dao.UserDao;
@@ -12,9 +10,7 @@ import occamsrazor.iot_server.dao.impl.GatewayUserDaoImpl;
 import occamsrazor.iot_server.dao.impl.UserDaoImpl;
 import occamsrazor.iot_server.domain.ClientUser;
 import occamsrazor.iot_server.domain.GatewayUser;
-import occamsrazor.iot_server.domain.User;
 import occamsrazor.iot_server.mqtt.MQTTPublish;
-import occamsrazor.iot_server.runnable.MqttPublishRunnable;
 import occamsrazor.iot_server.service.ClientMessageService;
 import occamsrazor.iot_server.utils.EncryptionUtil;
 import org.eclipse.paho.client.mqttv3.MqttException;
@@ -61,12 +57,23 @@ public class ClientMessageServiceImpl implements ClientMessageService {
                 });
                 break;
             case "register":
-                // registerHandle(jsonObject);
+                service.execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        registerHandle(jsonObject);
+                    }
+                });
                 break;
             case "gateway_control":
-                // gatewayControlHandle(jsonObject);
+                service.execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        gatewayControlHandle(jsonObject);
+                    }
+                });
                 break;
             default:
+                System.out.println("error");
                 // errorHandle(jsonObject);
                 break;
         }
@@ -159,16 +166,33 @@ public class ClientMessageServiceImpl implements ClientMessageService {
 
     @Override
     public void registerHandle(JSONObject jsonObject) {
-
+        System.out.println("register");
     }
 
     @Override
     public void gatewayControlHandle(JSONObject jsonObject) {
+        String clientId = jsonObject.getString("client_id");
+        ClientUserDao clientUserDao = new ClientUserDaoImpl();
+        GatewayUserDao gatewayUserDao = new GatewayUserDaoImpl();
+        String gatewayId = gatewayUserDao.findGatewayIdByUsername(clientUserDao.findUsernameByClientId(clientId));
+        jsonObject.remove("client_id");
+        jsonObject.remove("type");
+        jsonObject.put("type", "client_control");
 
+        try {
+            publish.publish(gatewayId + "_conversation", jsonObject.toJSONString());
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
-    public void errorHandle() {
 
+    public void errorHandle() {
+        System.out.println("error");
+//        Map<String, String> resMsg = new HashMap<>();
+//        resMsg.put("type", "error");
+//        resMsg.put("status", "error");
+//        publish.publish(clientId + "_conversation", JSON.toJSONString(resMsg));
     }
 }

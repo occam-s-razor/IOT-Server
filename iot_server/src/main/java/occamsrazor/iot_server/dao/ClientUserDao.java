@@ -14,6 +14,8 @@ public interface ClientUserDao {
 
     public ClientUser findByUsername(String username);
 
+    public String findUsernameByClientId(String client_id);
+
     public List<ClientUser> findAllClientUser();
 
     public boolean insertClientUser(ClientUser clientUser);

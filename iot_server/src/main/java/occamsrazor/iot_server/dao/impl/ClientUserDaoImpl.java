@@ -49,6 +49,21 @@ public class ClientUserDaoImpl implements ClientUserDao {
     }
 
     @Override
+    public String findUsernameByClientId(String client_id) {
+        String sql = "select username from client_user where client_id = ? limit 1;";
+
+        String username = null;
+
+        try {
+            username = runner.query(sql, new BeanHandler<>(String.class), client_id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return username;
+    }
+
+    @Override
     public List<ClientUser> findAllClientUser() {
         String sql = "select * from client_user;";
 
