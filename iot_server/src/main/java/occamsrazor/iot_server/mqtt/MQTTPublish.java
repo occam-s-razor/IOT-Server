@@ -14,7 +14,7 @@ public class MQTTPublish implements MqttCallback {
     private static final String CLIENT_ID = "MQTT_PUB_CLIENT_SERVER";
     private static final String USERNAME = "admin";
     private static final String PASSWORD = "password";
-    private static final int QOS = 2;
+    private static final int QOS = 1;
 
     private MqttClient client = null;
     private MqttMessage message = null;

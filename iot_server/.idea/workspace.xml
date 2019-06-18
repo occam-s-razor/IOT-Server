@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cc626e7f-4a24-47da-8ece-e36b8f934226" name="Default Changelist" comment="读写锁" />
+    <list default="true" id="cc626e7f-4a24-47da-8ece-e36b8f934226" name="Default Changelist" comment="读写锁">
+      <change afterPath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/impl/SensorsValueDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/utils/JsonUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2e20f30f-45fa-4dc8-925b-aabd3ffbf04c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2e20f30f-45fa-4dc8-925b-aabd3ffbf04c.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/ClientUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/ClientUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/GatewayUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/GatewayUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/SensorsValuesDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/SensorsValuesDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/impl/ClientUserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/impl/ClientUserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/impl/GatewayUserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/impl/GatewayUserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/domain/SensorsValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/domain/SensorsValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/mqtt/MQTTPublish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/mqtt/MQTTPublish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/mqtt/MQTTSubscribe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/mqtt/MQTTSubscribe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/impl/MessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/impl/MessageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/test/MyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/test/MyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/dao/ClientUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/dao/ClientUserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/dao/GatewayUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/dao/GatewayUserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/dao/Impl/ClientUserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/dao/Impl/ClientUserDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/dao/Impl/GatewayUserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/dao/Impl/GatewayUserDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/dao/SensorsValuesDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/dao/SensorsValuesDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/domain/SensorsValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/domain/SensorsValue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/mqtt/MQTTSubscribe.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/service/impl/MessageServiceImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/service/impl/MessageServiceImpl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/service/impl/MessageServiceImpl$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/service/impl/MessageServiceImpl$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/service/impl/MessageServiceImpl$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/service/impl/MessageServiceImpl$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/service/impl/MessageServiceImpl$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/service/impl/MessageServiceImpl$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/service/impl/MessageServiceImpl$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/service/impl/MessageServiceImpl$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/service/impl/MessageServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/service/impl/MessageServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/test/MyTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/occamsrazor/iot_server/test/MyTest.class" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,10 +76,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/MainServer.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/mqtt/MQTTSubscribe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+            <state relative-caret-position="254">
+              <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,60 +88,26 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/mqtt/MQTTSubscribe.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/impl/MessageServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="38" column="56" lean-forward="true" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
+            <state relative-caret-position="274">
+              <caret line="167" column="20" lean-forward="true" selection-start-line="167" selection-start-column="20" selection-end-line="167" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#8420#8421#0" expanded="true" />
+                <element signature="e#8466#8467#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/impl/MessageServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="257" column="35" lean-forward="true" selection-start-line="257" selection-start-column="35" selection-end-line="257" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1792#2542#0" expanded="true" />
-                <element signature="e#2541#2542#0" expanded="true" />
-                <element signature="e#2627#3377#0" expanded="true" />
-                <element signature="e#3376#3377#0" expanded="true" />
-                <element signature="e#3464#4216#0" expanded="true" />
-                <element signature="e#4215#4216#0" expanded="true" />
-                <element signature="e#4310#4790#0" expanded="true" />
-                <element signature="e#4789#4790#0" expanded="true" />
-                <element signature="e#5959#5960#0" expanded="true" />
-                <element signature="e#5995#5996#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/MessageService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/mqtt/MQTTPublish.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+            <state relative-caret-position="101">
+              <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1234#1235#0" expanded="true" />
-                <element signature="e#1292#1293#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -120,29 +116,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/test/MyTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="58" selection-start-line="58" selection-end-line="58" />
+            <state relative-caret-position="424">
+              <caret line="84" column="27" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/utils/DateStyle.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/utils/DateUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="329" selection-start-line="329" selection-end-line="329" />
             </state>
           </provider>
         </entry>
@@ -152,8 +130,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -202,25 +180,28 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/2e20f30f-45fa-4dc8-925b-aabd3ffbf04c/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/UserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/impl/UserDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/utils/ReadWriteLock.java" />
+        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/GatewayMessageService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/impl/GatewayMessageServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/utils/DateUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/utils/DateStyle.java" />
+        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/utils/Week.java" />
+        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/MainServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/ClientMessageService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/impl/ClientMessageServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/ClientUserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/impl/ClientUserDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/GatewayUserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/impl/GatewayUserDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/utils/ReadWriteLock.java" />
-        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/GatewayMessageService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/impl/GatewayMessageServiceImpl.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/domain/SensorsValue.java" />
-        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/SensorsValuesDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/utils/DateUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/utils/DateStyle.java" />
-        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/utils/Week.java" />
         <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/test/MyTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/MainServer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/mqtt/MQTTPublish.java" />
-        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/ClientMessageService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/impl/ClientMessageServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/mqtt/MQTTSubscribe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/SensorsValuesDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/impl/SensorsValueDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/impl/MessageServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/utils/JsonUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/mqtt/MQTTSubscribe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/mqtt/MQTTPublish.java" />
       </list>
     </option>
   </component>
@@ -273,6 +254,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="iot_server" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="iot_server" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -376,22 +368,20 @@
               <item name="iot_server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="iot_server" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="iot_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="iot_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="iot_server" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="iot_server" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="iot_server" type="2674bda8:ScopeViewTreeModel$GroupNode" />
             </path>
           </expand>
           <select />
@@ -470,22 +460,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyTest.Test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="iot_server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="occamsrazor.iot_server.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="occamsrazor.iot_server.test" />
-      <option name="MAIN_CLASS_NAME" value="occamsrazor.iot_server.test.MyTest" />
-      <option name="METHOD_NAME" value="Test2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MyTest.Test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="iot_server" />
       <extension name="coverage">
@@ -518,13 +492,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MyTest.Test5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="iot_server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="occamsrazor.iot_server.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="occamsrazor.iot_server.test" />
+      <option name="MAIN_CLASS_NAME" value="occamsrazor.iot_server.test.MyTest" />
+      <option name="METHOD_NAME" value="Test5" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainServer" />
+        <item itemvalue="JUnit.MyTest.Test5" />
         <item itemvalue="JUnit.MyTest.Test4" />
         <item itemvalue="JUnit.MyTest.Test3" />
         <item itemvalue="JUnit.MyTest.Test1" />
-        <item itemvalue="JUnit.MyTest.Test2" />
       </list>
     </recent_temporary>
   </component>
@@ -545,20 +535,12 @@
       <workItem from="1560729380603" duration="9498000" />
       <workItem from="1560772077273" duration="1055000" />
       <workItem from="1560780586774" duration="2711000" />
-      <workItem from="1560818037997" duration="9817000" />
+      <workItem from="1560818037997" duration="14277000" />
+      <workItem from="1560833602812" duration="11253000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MyTest_Test1 - 2019.06.17 at 08h 48m 05s.xml">
-      <configuration name="MyTest.Test1" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyTest_Test1 - 2019.06.17 at 08h 49m 07s.xml">
-      <configuration name="MyTest.Test1" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyTest_Test1 - 2019.06.17 at 08h 50m 31s.xml">
-      <configuration name="MyTest.Test1" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MyTest_Test3 - 2019.06.17 at 18h 46m 00s.xml">
       <configuration name="MyTest.Test3" configurationId="JUnit" />
     </history-entry>
@@ -580,14 +562,24 @@
     <history-entry file="MyTest_Test4 - 2019.06.18 at 10h 00m 50s.xml">
       <configuration name="MyTest.Test4" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MyTest_Test5 - 2019.06.18 at 13h 31m 20s.xml">
+      <configuration name="MyTest.Test5" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyTest_Test5 - 2019.06.18 at 13h 33m 32s.xml">
+      <configuration name="MyTest.Test5" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyTest_Test5 - 2019.06.18 at 13h 34m 23s.xml">
+      <configuration name="MyTest.Test5" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66559000" />
+    <option name="totallyTimeSpent" value="82272000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26865673" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27132195" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -598,7 +590,7 @@
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.335141" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.335141" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -622,7 +614,7 @@
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26865673" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26865673" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -633,7 +625,7 @@
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.335141" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.335141" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -641,7 +633,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.329718" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" />
@@ -670,7 +662,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/test/MyTest.java</url>
-          <line>48</line>
+          <line>52</line>
           <properties class="occamsrazor.iot_server.test.MyTest" method="Test2">
             <option name="EMULATED" value="true" />
           </properties>
@@ -678,7 +670,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/test/MyTest.java</url>
-          <line>26</line>
+          <line>30</line>
           <properties class="occamsrazor.iot_server.test.MyTest" method="Test1">
             <option name="EMULATED" value="true" />
           </properties>
@@ -724,16 +716,6 @@
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a2f223bf-d86c-4982-a348-715ca9f65060/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/utils/DruidUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/domain/GatewayUser.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -857,16 +839,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/utils/EncryptionUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
@@ -883,46 +855,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1938">
           <caret line="122" selection-start-line="122" selection-end-line="122" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/ClientUserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/impl/ClientUserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="60" column="9" lean-forward="true" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/GatewayUserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="59" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/impl/GatewayUserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="58" column="41" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -949,50 +881,6 @@
             <element signature="e#3496#3497#0" expanded="true" />
             <element signature="e#3583#3584#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/domain/SensorsValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
-          <folding>
-            <element signature="e#767#768#0" expanded="true" />
-            <element signature="e#799#800#0" expanded="true" />
-            <element signature="e#849#850#0" expanded="true" />
-            <element signature="e#891#892#0" expanded="true" />
-            <element signature="e#637#638#0" expanded="true" />
-            <element signature="e#671#672#0" expanded="true" />
-            <element signature="e#725#726#0" expanded="true" />
-            <element signature="e#771#772#0" expanded="true" />
-            <element signature="e#806#807#0" expanded="true" />
-            <element signature="e#837#838#0" expanded="true" />
-            <element signature="e#885#886#0" expanded="true" />
-            <element signature="e#925#926#0" expanded="true" />
-            <element signature="e#955#956#0" expanded="true" />
-            <element signature="e#981#982#0" expanded="true" />
-            <element signature="e#1019#1020#0" expanded="true" />
-            <element signature="e#1049#1050#0" expanded="true" />
-            <element signature="e#1080#1081#0" expanded="true" />
-            <element signature="e#1107#1108#0" expanded="true" />
-            <element signature="e#1147#1148#0" expanded="true" />
-            <element signature="e#1179#1180#0" expanded="true" />
-            <element signature="e#1212#1213#0" expanded="true" />
-            <element signature="e#1241#1242#0" expanded="true" />
-            <element signature="e#1285#1286#0" expanded="true" />
-            <element signature="e#1321#1322#0" expanded="true" />
-            <element signature="e#1354#1355#0" expanded="true" />
-            <element signature="e#1383#1384#0" expanded="true" />
-            <element signature="e#1427#1428#0" expanded="true" />
-            <element signature="e#1463#1464#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/SensorsValuesDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1027,16 +915,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/test/MyTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/MainServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1047,48 +925,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/mqtt/MQTTPublish.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1234#1235#0" expanded="true" />
-            <element signature="e#1292#1293#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/impl/GatewayMessageServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/GatewayMessageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/mqtt/MQTTSubscribe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="38" column="56" lean-forward="true" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/impl/GatewayMessageServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/GatewayMessageService.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/MessageService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -1099,22 +937,156 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/impl/MessageServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/impl/GatewayUserDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="257" column="35" lean-forward="true" selection-start-line="257" selection-start-column="35" selection-end-line="257" selection-end-column="35" />
+        <state relative-caret-position="1003">
+          <caret line="67" column="23" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1792#2542#0" expanded="true" />
-            <element signature="e#2541#2542#0" expanded="true" />
-            <element signature="e#2627#3377#0" expanded="true" />
-            <element signature="e#3376#3377#0" expanded="true" />
-            <element signature="e#3464#4216#0" expanded="true" />
-            <element signature="e#4215#4216#0" expanded="true" />
-            <element signature="e#4310#4790#0" expanded="true" />
-            <element signature="e#4789#4790#0" expanded="true" />
-            <element signature="e#5959#5960#0" expanded="true" />
-            <element signature="e#5995#5996#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/GatewayUserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/ClientUserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/impl/ClientUserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="69" column="31" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/domain/SensorsValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="91" column="41" lean-forward="true" selection-start-line="91" selection-start-column="41" selection-end-line="91" selection-end-column="41" />
+          <folding>
+            <element signature="e#1011#1012#0" expanded="true" />
+            <element signature="e#1043#1044#0" expanded="true" />
+            <element signature="e#1093#1094#0" expanded="true" />
+            <element signature="e#1135#1136#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/test/MyTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="84" column="27" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/SensorsValuesDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/impl/SensorsValueDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/utils/DruidUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/utils/JsonUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/mqtt/MQTTSubscribe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://2e20f30f-45fa-4dc8-925b-aabd3ffbf04c/schema/iot_server/table/gateway_info">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="ad2bd525-0a21-4c70-8a4b-2b8ee7ac15fa">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/impl/MessageServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="167" column="20" lean-forward="true" selection-start-line="167" selection-start-column="20" selection-end-line="167" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#8420#8421#0" expanded="true" />
+            <element signature="e#8466#8467#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/mqtt/MQTTPublish.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

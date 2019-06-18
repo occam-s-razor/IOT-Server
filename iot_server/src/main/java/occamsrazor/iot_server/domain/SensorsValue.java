@@ -7,18 +7,20 @@ package occamsrazor.iot_server.domain;
  */
 public class SensorsValue {
     private String timeStamp;
+    private String gatewayId;
     private String temperature;
     private String humidity;
     private String fan;
     private String beam;
-    private String light1;
-    private String light2;
+    private boolean light1;
+    private boolean light2;
 
     public SensorsValue() {
     }
 
-    public SensorsValue(String timeStamp, String temperature, String humidity, String fan, String beam, String light1, String light2) {
+    public SensorsValue(String timeStamp, String gatewayId, String temperature, String humidity, String fan, String beam, boolean light1, boolean light2) {
         this.timeStamp = timeStamp;
+        this.gatewayId = gatewayId;
         this.temperature = temperature;
         this.humidity = humidity;
         this.fan = fan;
@@ -33,6 +35,14 @@ public class SensorsValue {
 
     public void setTimeStamp(String timeStamp) {
         this.timeStamp = timeStamp;
+    }
+
+    public String getGatewayId() {
+        return gatewayId;
+    }
+
+    public void setGatewayId(String gatewayId) {
+        this.gatewayId = gatewayId;
     }
 
     public String getTemperature() {
@@ -67,31 +77,33 @@ public class SensorsValue {
         this.beam = beam;
     }
 
-    public String getLight1() {
+    public boolean getLight1() {
         return light1;
     }
 
-    public void setLight1(String light1) {
+    public void setLight1(boolean light1) {
         this.light1 = light1;
     }
 
-    public String getLight2() {
+    public boolean getLight2() {
         return light2;
     }
 
-    public void setLight2(String light2) {
+    public void setLight2(boolean light2) {
         this.light2 = light2;
     }
 
     @Override
     public String toString() {
         return "SensorsValue{" +
-                "temperature='" + temperature + '\'' +
+                "timeStamp='" + timeStamp + '\'' +
+                ", gatewayId='" + gatewayId + '\'' +
+                ", temperature='" + temperature + '\'' +
                 ", humidity='" + humidity + '\'' +
                 ", fan='" + fan + '\'' +
                 ", beam='" + beam + '\'' +
-                ", light1='" + light1 + '\'' +
-                ", light2='" + light2 + '\'' +
+                ", light1=" + light1 +
+                ", light2=" + light2 +
                 '}';
     }
 }

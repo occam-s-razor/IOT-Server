@@ -1,9 +1,17 @@
 package occamsrazor.iot_server.mqtt;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONException;
+import com.alibaba.fastjson.JSONObject;
 import occamsrazor.iot_server.service.MessageService;
 import occamsrazor.iot_server.service.impl.MessageServiceImpl;
+import occamsrazor.iot_server.utils.DateUtil;
+import occamsrazor.iot_server.utils.JsonUtil;
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
+
+import java.util.Arrays;
+import java.util.Date;
 
 
 /**
@@ -70,8 +78,19 @@ public class MQTTSubscribe implements MqttCallback {
     @Override
     public void messageArrived(String s, MqttMessage mqttMessage) throws Exception {
         message = mqttMessage;
-        System.out.println("From topic: " + s);
-        // System.out.println(new String(mqttMessage.getPayload()));
+        System.out.println("Time:" + DateUtil.DateToString(new Date(), "yyyy-MM-dd HH:mm:ss") + " From topic: " + s);
+        try {
+            String msg = new String(mqttMessage.getPayload());
+            System.out.println(msg);
+            String type = new JSONObject(JSON.parseObject(msg)).getString("type");
+            if (type == null) {
+                System.out.println("data not valid");
+                return;
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return;
+        }
         switch (s) {
             case "gateway_conversation":
                 messageService.gatewayMessageHandle(mqttMessage);

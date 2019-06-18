@@ -1,13 +1,17 @@
 package occamsrazor.iot_server.test;
 
+import com.alibaba.fastjson.JSONObject;
 import occamsrazor.iot_server.dao.ClientUserDao;
 import occamsrazor.iot_server.dao.GatewayUserDao;
+import occamsrazor.iot_server.dao.SensorsValuesDao;
 import occamsrazor.iot_server.dao.impl.ClientUserDaoImpl;
 import occamsrazor.iot_server.dao.impl.GatewayUserDaoImpl;
+import occamsrazor.iot_server.dao.impl.SensorsValueDaoImpl;
 import occamsrazor.iot_server.dao.impl.UserDaoImpl;
 import occamsrazor.iot_server.dao.UserDao;
 import occamsrazor.iot_server.domain.ClientUser;
 import occamsrazor.iot_server.domain.GatewayUser;
+import occamsrazor.iot_server.domain.SensorsValue;
 import occamsrazor.iot_server.domain.User;
 import occamsrazor.iot_server.mqtt.MQTTSubscribe;
 import occamsrazor.iot_server.utils.DateUtil;
@@ -71,5 +75,18 @@ public class MyTest {
     public void Test4() {
         Date date = new Date();
         System.out.println(DateUtil.DateToString(date, "yyyy-MM-dd HH:mm:ss"));
+    }
+
+    @Test
+    public void Test5() {
+        SensorsValuesDao sensorsValuesDao = new SensorsValueDaoImpl();
+        String time = DateUtil.DateToString(new Date(), "yyyy-MM-dd HH:mm:ss");
+        SensorsValue value = new SensorsValue(time, "2016110201", "25.20", "45.30", "60", "89", false, true);
+        System.out.println(value);
+        if (sensorsValuesDao.insertSensorsValues(value)) {
+            System.out.println("success");
+        } else {
+            System.out.println("failed");
+        }
     }
 }
