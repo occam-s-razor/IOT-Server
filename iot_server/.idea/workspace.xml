@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc626e7f-4a24-47da-8ece-e36b8f934226" name="Default Changelist" comment="测试MQTT">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/ClientUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/ClientUserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/GatewayUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/GatewayUserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/impl/ClientUserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/impl/ClientUserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/impl/GatewayUserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/impl/GatewayUserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/impl/ClientMessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/impl/ClientMessageServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/utils/ReadWriteLock.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -76,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/impl/ClientMessageServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="160" column="42" selection-start-line="160" selection-start-column="42" selection-end-line="160" selection-end-column="42" />
+            <state relative-caret-position="345">
+              <caret line="164" column="5" lean-forward="true" selection-start-line="164" selection-start-column="5" selection-end-line="164" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2200#2384#0" expanded="true" />
@@ -89,6 +84,24 @@
                 <element signature="e#2708#2709#0" expanded="true" />
                 <element signature="e#5959#5960#0" expanded="true" />
                 <element signature="e#5995#5996#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/utils/ReadWriteLock.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="697">
+              <caret line="89" column="9" lean-forward="true" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#214#231#0" expanded="true" />
+                <element signature="e#3024#3025#0" expanded="true" />
+                <element signature="e#3142#3143#0" expanded="true" />
+                <element signature="e#3389#3390#0" expanded="true" />
+                <element signature="e#3496#3497#0" expanded="true" />
+                <element signature="e#3583#3584#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -234,6 +247,7 @@
         <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/GatewayUserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/dao/impl/GatewayUserDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/impl/ClientMessageServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/utils/ReadWriteLock.java" />
       </list>
     </option>
   </component>
@@ -398,6 +412,15 @@
               <item name="iot_server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="iot_server" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="iot_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="iot_server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -550,7 +573,7 @@
       <workItem from="1560729380603" duration="9498000" />
       <workItem from="1560772077273" duration="1055000" />
       <workItem from="1560780586774" duration="2711000" />
-      <workItem from="1560818037997" duration="1249000" />
+      <workItem from="1560818037997" duration="1934000" />
     </task>
     <servers />
   </component>
@@ -587,7 +610,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57991000" />
+    <option name="totallyTimeSpent" value="58676000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -825,13 +848,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/druid.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="40" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/mqtt/MQTTSubscribe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -976,10 +992,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/druid.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="40" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/service/impl/ClientMessageServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="160" column="42" selection-start-line="160" selection-start-column="42" selection-end-line="160" selection-end-column="42" />
+        <state relative-caret-position="345">
+          <caret line="164" column="5" lean-forward="true" selection-start-line="164" selection-start-column="5" selection-end-line="164" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2200#2384#0" expanded="true" />
@@ -988,6 +1011,22 @@
             <element signature="e#2708#2709#0" expanded="true" />
             <element signature="e#5959#5960#0" expanded="true" />
             <element signature="e#5995#5996#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/occamsrazor/iot_server/utils/ReadWriteLock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="89" column="9" lean-forward="true" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#214#231#0" expanded="true" />
+            <element signature="e#3024#3025#0" expanded="true" />
+            <element signature="e#3142#3143#0" expanded="true" />
+            <element signature="e#3389#3390#0" expanded="true" />
+            <element signature="e#3496#3497#0" expanded="true" />
+            <element signature="e#3583#3584#0" expanded="true" />
           </folding>
         </state>
       </provider>
