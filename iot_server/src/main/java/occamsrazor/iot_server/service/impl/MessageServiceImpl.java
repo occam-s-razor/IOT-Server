@@ -312,8 +312,13 @@ public class MessageServiceImpl implements MessageService {
 
             topic = clientId + "_conversation";
 
+            Map<String, Object> map = new HashMap<>();
+            map.put("type", "dashboard");
+            map.put("gateway_id", gatewayId);
+            map.put("sensors_value", sensorsValue);
+
             try {
-                publish.publish(topic, JSON.toJSONString(sensorsValue));
+                publish.publish(topic, JSON.toJSONString(map));
             } catch (MqttException e) {
                 e.printStackTrace();
             }

@@ -90,13 +90,13 @@ modify failed
 {
 	"type": "gateway_control",
 	"client_id": "a1324562312",
-	"light0": "on"
+	"light0": "true"
 }
 或
 {
 	"type": "gateway_control",
 	"client_id": "a1324562312",
-	"light1": "off"
+	"light1": "false"
 }
 ```
 
@@ -113,8 +113,8 @@ modify failed
 		"humidity": "60",
 		"fan": "69",
 		"beam": "56",
-		"light1": "on",
-		"light2": "off"
+		"light1": "true",
+		"light2": "false"
 		
 	}
 }
@@ -137,12 +137,12 @@ modify failed
 或
 {
 	"type": "client_control",
-	"light1": "on"
+	"light1": "true"
 }
 或
 {
 	"type": "client_control",
-	"light1": "off"
+	"light1": "false"
 }
 ```
 
@@ -158,8 +158,8 @@ modify failed
 		"humidity": "60",
 		"fan": "69",
 		"beam": "56",
-		"light1": "on",
-		"light2": "off"
+		"light1": "true",
+		"light2": "false"
 		
 	}
 }

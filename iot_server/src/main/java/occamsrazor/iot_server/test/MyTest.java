@@ -1,5 +1,6 @@
 package occamsrazor.iot_server.test;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import occamsrazor.iot_server.dao.ClientUserDao;
 import occamsrazor.iot_server.dao.GatewayUserDao;
@@ -19,6 +20,8 @@ import occamsrazor.iot_server.utils.EncryptionUtil;
 import org.junit.jupiter.api.Test;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author : 鱼摆摆
@@ -88,5 +91,17 @@ public class MyTest {
         } else {
             System.out.println("failed");
         }
+    }
+
+    @Test
+    public void Test6() {
+        Map<String, Object> map = new HashMap<>();
+
+        map.put("type", "dashboard");
+        map.put("gateway_id", "2016110201");
+        String time = DateUtil.DateToString(new Date(), "yyyy-MM-dd HH:mm:ss");
+        map.put("sensors_value", new SensorsValue(time, "2016110201", "25.20", "45.30", "60", "89", false, true));
+
+        System.out.println(JSON.toJSONString(map));
     }
 }
