@@ -13,12 +13,14 @@ import occamsrazor.iot_server.domain.GatewayUser;
 import occamsrazor.iot_server.mqtt.MQTTPublish;
 import occamsrazor.iot_server.service.ClientMessageService;
 import occamsrazor.iot_server.utils.EncryptionUtil;
+import occamsrazor.iot_server.utils.ReadWriteLock;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.*;
+import java.util.concurrent.locks.Lock;
 
 /**
  * @author : 鱼摆摆
@@ -33,6 +35,9 @@ public class ClientMessageServiceImpl implements ClientMessageService {
     // 创建MQTT消息发布对象
     MQTTPublish publish = new MQTTPublish();
 
+    // 读写锁
+    ReadWriteLock lock = new ReadWriteLock();
+
     @Override
     public void messageHandle(MqttMessage mqttMessage) {
         String msg = new String(mqttMessage.getPayload());
@@ -44,7 +49,21 @@ public class ClientMessageServiceImpl implements ClientMessageService {
                 service.execute(new Runnable() {
                     @Override
                     public void run() {
-                        loginHandle(jsonObject);
+                        try {
+                            lock.lockRead();
+                            lock.lockWrite();
+                            loginHandle(jsonObject);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        } finally {
+                            lock.unlockRead();
+                            try {
+                                lock.unlockWrite();
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+
                     }
                 });
                 break;
@@ -52,7 +71,20 @@ public class ClientMessageServiceImpl implements ClientMessageService {
                 service.execute(new Runnable() {
                     @Override
                     public void run() {
-                        modifyHandle(jsonObject);
+                        try {
+                            lock.lockRead();
+                            lock.lockWrite();
+                            modifyHandle(jsonObject);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        } finally {
+                            lock.unlockRead();
+                            try {
+                                lock.unlockWrite();
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
                     }
                 });
                 break;
@@ -60,7 +92,20 @@ public class ClientMessageServiceImpl implements ClientMessageService {
                 service.execute(new Runnable() {
                     @Override
                     public void run() {
-                        registerHandle(jsonObject);
+                        try {
+                            lock.lockRead();
+                            lock.lockWrite();
+                            registerHandle(jsonObject);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        } finally {
+                            lock.unlockRead();
+                            try {
+                                lock.unlockWrite();
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
                     }
                 });
                 break;
@@ -68,7 +113,14 @@ public class ClientMessageServiceImpl implements ClientMessageService {
                 service.execute(new Runnable() {
                     @Override
                     public void run() {
-                        gatewayControlHandle(jsonObject);
+                        try {
+                            lock.lockRead();
+                            gatewayControlHandle(jsonObject);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        } finally {
+                            lock.unlockRead();
+                        }
                     }
                 });
                 break;

@@ -100,6 +100,26 @@ modify failed
 }
 ```
 
+### 接收家居信息
+
+数据格式(json)：
+```json
+{
+	"type": "dashboard",
+	"gateway_id": "123761354321",
+	"sensors_value": {
+		"time_stamp", "2019/06/15",
+		"temperature": "26.3",
+		"humidity": "60",
+		"fan": "69",
+		"beam": "56",
+		"light1": "on",
+		"light2": "off"
+		
+	}
+}
+```
+
 ## 家居网关
 
 开机主动连接服务器，发布主题："gateway_conversation"，用于接收所有服务器发送给家庭网关的信息
@@ -133,15 +153,14 @@ modify failed
 {
 	"type": "dashboard",
 	"gateway_id": "123761354321",
-	"vlues": {
+	"sensors_value": {
 		"temperature": "26.3",
 		"humidity": "60",
 		"fan": "69",
 		"beam": "56",
-		"light": {
-			"light1": "on",
-			"light2": "off"
-		}
+		"light1": "on",
+		"light2": "off"
+		
 	}
 }
 ```

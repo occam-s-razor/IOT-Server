@@ -10,4 +10,6 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
  */
 public interface GatewayMessageService {
     public void messageHandle(MqttMessage mqttMessage);
+
+    public void dashboardHandle(JSONObject jsonObject);
 }

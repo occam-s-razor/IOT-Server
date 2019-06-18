@@ -13,6 +13,8 @@ import occamsrazor.iot_server.mqtt.MQTTSubscribe;
 import occamsrazor.iot_server.utils.EncryptionUtil;
 import org.junit.jupiter.api.Test;
 
+import java.util.Date;
+
 /**
  * @author : 鱼摆摆
  * @date : Create at 2019-06-16
@@ -62,5 +64,11 @@ public class MyTest {
         } else {
             System.out.println("failed");
         }
+    }
+
+    @Test
+    public void Test4() {
+        Date date = new Date();
+        System.out.println(date.getTime());
     }
 }
