@@ -1,8 +1,11 @@
 package occamsrazor.iot_server.mqtt;
 
 import occamsrazor.iot_server.domain.ClientUser;
+import occamsrazor.iot_server.utils.DateUtil;
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
+
+import java.util.Date;
 
 /**
  * @author : 鱼摆摆
@@ -11,7 +14,7 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
  */
 public class MQTTPublish implements MqttCallback {
     private static final String BROKER = "tcp://119.23.61.148:61613";
-    private static final String CLIENT_ID = "MQTT_PUB_CLIENT_SERVER";
+    private static final String CLIENT_ID = DateUtil.getDate(new Date());
     private static final String USERNAME = "admin";
     private static final String PASSWORD = "password";
     private static final int QOS = 1;
@@ -80,6 +83,15 @@ public class MQTTPublish implements MqttCallback {
 //                client.reconnect();
 //            }
             client.publish(topic, message);
+        }
+    }
+
+    public void disconnect() {
+        try {
+            client.disconnect();
+            client.close();
+        } catch (MqttException e) {
+            e.printStackTrace();
         }
     }
 }

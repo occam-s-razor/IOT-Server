@@ -37,7 +37,7 @@ public class MessageServiceImpl implements MessageService {
     private ExecutorService service = new ThreadPoolExecutor(10, Integer.MAX_VALUE, 60L, TimeUnit.SECONDS, new SynchronousQueue<Runnable>(), Executors.defaultThreadFactory(), new ThreadPoolExecutor.AbortPolicy());
 
     // 创建MQTT消息发布对象
-    private MQTTPublish publish = new MQTTPublish();
+    //private MQTTPublish publish = new MQTTPublish();
 
     // 读写锁
     private ReadWriteLock lock = new ReadWriteLock();
@@ -140,6 +140,7 @@ public class MessageServiceImpl implements MessageService {
 
     @Override
     public void loginHandle(JSONObject jsonObject) {
+        MQTTPublish publish = new MQTTPublish();
         String clientId = jsonObject.getString("client_id");
         JSONObject object = jsonObject.getJSONObject("msg");
         String username = object.getString("username");
@@ -172,19 +173,26 @@ public class MessageServiceImpl implements MessageService {
             }
         } else {
             resMsg.put("status", "error");
+            resMsg.put("status", "error");
             System.out.println("login error");
         }
 
         // 发布
         try {
-            publish.publish(clientId + "_conversation", JSON.toJSONString(resMsg));
+            String topic = username + "_conversation";
+            System.out.println("topic:" + topic);
+            for (int i = 0; i < 10; i++) {
+                publish.publish(topic, JSON.toJSONString(resMsg));
+            }
         } catch (MqttException e) {
             e.printStackTrace();
         }
+        publish.disconnect();
     }
 
     @Override
     public void modifyHandle(JSONObject jsonObject) {
+        MQTTPublish publish = new MQTTPublish();
         String clientId = jsonObject.getString("client_id");
         JSONObject object = jsonObject.getJSONObject("msg");
         String username = object.getString("username");
@@ -226,6 +234,7 @@ public class MessageServiceImpl implements MessageService {
         } catch (MqttException e) {
             e.printStackTrace();
         }
+        publish.disconnect();
     }
 
     @Override
@@ -235,6 +244,7 @@ public class MessageServiceImpl implements MessageService {
 
     @Override
     public void gatewayControlHandle(JSONObject jsonObject) {
+        MQTTPublish publish = new MQTTPublish();
         String clientId = jsonObject.getString("client_id");
         ClientUserDao clientUserDao = new ClientUserDaoImpl();
         GatewayUserDao gatewayUserDao = new GatewayUserDaoImpl();
@@ -248,6 +258,7 @@ public class MessageServiceImpl implements MessageService {
         } catch (MqttException e) {
             e.printStackTrace();
         }
+        publish.disconnect();
     }
 
     @Override
@@ -288,6 +299,7 @@ public class MessageServiceImpl implements MessageService {
 
     @Override
     public void dashboardHandle(JSONObject jsonObject) {
+        MQTTPublish publish = new MQTTPublish();
         String gatewayId = jsonObject.getString("gateway_id");
         JSONObject object = jsonObject.getJSONObject("sensors_value");
 
@@ -311,15 +323,20 @@ public class MessageServiceImpl implements MessageService {
             ClientUserDao clientUserDao = new ClientUserDaoImpl();
             String clientId = clientUserDao.findClientIdByUsername(gatewayUserDao.findUsernameByGatewayId(gatewayId));
 
-            topic = clientId + "_conversation";
-
             Map<String, Object> map = new HashMap<>();
             map.put("type", "dashboard");
             map.put("gateway_id", gatewayId);
             map.put("sensors_value", sensorsValue);
 
             try {
+                topic = clientId + "_conversation";
+                System.out.println("topic:" + topic);
                 publish.publish(topic, JSON.toJSONString(map));
+                topic = gatewayId + "_conversation";
+                System.out.println("topic:" + topic);
+                for (int i = 0; i < 10; i++) {
+                    publish.publish(topic, "{\"type\":\"ok\"}");
+                }
             } catch (MqttException e) {
                 e.printStackTrace();
             }
@@ -328,11 +345,15 @@ public class MessageServiceImpl implements MessageService {
             topic = gatewayId + "_conversation";
 
             try {
-                publish.publish(topic, "{\"type\":\"error\"}");
+                for (int i = 0; i < 10; i++) {
+                    publish.publish(topic, "{\"type\":\"error\"}");
+                }
             } catch (MqttException e) {
                 e.printStackTrace();
             }
         }
+        publish.disconnect();
+//        System.out.println("topic:" + topic);
 
     }
 }
