@@ -13,9 +13,11 @@ import occamsrazor.iot_server.domain.ClientUser;
 import occamsrazor.iot_server.domain.GatewayUser;
 import occamsrazor.iot_server.domain.SensorsValue;
 import occamsrazor.iot_server.domain.User;
+import occamsrazor.iot_server.mqtt.MQTTPublish;
 import occamsrazor.iot_server.mqtt.MQTTSubscribe;
 import occamsrazor.iot_server.utils.DateUtil;
 import occamsrazor.iot_server.utils.EncryptionUtil;
+import org.eclipse.paho.client.mqttv3.MqttException;
 import org.junit.jupiter.api.Test;
 
 import java.util.Date;
@@ -95,5 +97,32 @@ public class MyTest {
         map.put("sensors_value", new SensorsValue(time, "2016110201", "25.20", "45.30", "60", "89", false, true));
 
         System.out.println(JSON.toJSONString(map));
+    }
+
+    @Test
+    public void Test7() {
+        MQTTPublish publish = new MQTTPublish();
+        String topic = "P7C0218118007351_conversation";
+
+        SensorsValuesDao sensorsValuesDao = new SensorsValueDaoImpl();
+
+        SensorsValue sensorsValue = sensorsValuesDao.findNewest();
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("type", "dashboard");
+        map.put("gateway_id", "2016110201");
+        map.put("sensors_value", sensorsValue);
+
+        try {
+            System.out.println("topic:" + topic);
+            System.out.println(JSON.toJSONString(map));
+            for (int i = 0; i < 5; i++) {
+                publish.publish(topic, JSON.toJSONString(map));
+            }
+        } catch (MqttException e) {
+            e.printStackTrace();
+        } finally {
+            publish.disconnect();
+        }
     }
 }
